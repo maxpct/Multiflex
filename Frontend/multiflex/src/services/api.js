@@ -1,7 +1,7 @@
 // Guardamos la URL base de nuestra API
 // Esta dirección viene del archivo .env mediante la variable VITE_API_URL
 // Así no tenemos que escribir la URL completa en cada petición.
-const API_URL = "http://localhost:5001/api";
+const API_URL = "https://multiflex-tak3.onrender.com";
 
 // Exportamos la función para poder utilizarla en otros archivos
 // async significa que esta función hará una petición y tendrá que esperar
