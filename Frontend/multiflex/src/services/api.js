@@ -1,7 +1,7 @@
 // Guardamos la URL base de nuestra API
 // Esta dirección viene del archivo .env mediante la variable VITE_API_URL
 // Así no tenemos que escribir la URL completa en cada petición.
-const API_URL = "https://multiflex-tak3.onrender.com";
+const API_URL = "https://multiflex-tak3.onrender.com/api";
 
 // Exportamos la función para poder utilizarla en otros archivos
 // async significa que esta función hará una petición y tendrá que esperar
@@ -34,7 +34,6 @@ export const getServiceById = async (id) => {
 
     // Hacemos una petición al backend enviando el ID.
     // Si id vale 3, la URL quedaría:
-    // http://localhost:3000/services/3
     const response = await fetch(`${API_URL}/services/${id}`);
 
 
