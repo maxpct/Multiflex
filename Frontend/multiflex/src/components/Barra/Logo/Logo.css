@@ -1,0 +1,18 @@
+/* Cuadrito azul con la letra del logo */
+.logo-cuadro {
+  width: 38px;
+  height: 38px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  /* Pequeño giro al pasar el mouse sobre el logo */
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-cuadro {
+  transform: rotate(-6deg);
+}

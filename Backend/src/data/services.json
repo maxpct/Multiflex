@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Plumbing",
+    "description": "Installation and repair of plumbing systems.",
+    "price": 350
+  },
+  {
+    "id": 2,
+    "name": "Electrical",
+    "description": "Electrical installations and maintenance.",
+    "price": 450
+  },
+  {
+    "id": 3,
+    "name": "Painting",
+    "description": "Interior and exterior painting services.",
+    "price": 700
+  },
+  {
+    "id": 4,
+    "name": "Gardening",
+    "description": "Garden maintenance and landscaping.",
+    "price": 500
+  }
+]

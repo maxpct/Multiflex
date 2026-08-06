@@ -1,0 +1,59 @@
+/* Tarjeta de un paso. Todos comparten la clase "paso". */
+.paso {
+  background-color: #FFFFFF;
+  border: 1px solid #E9ECEF;
+  border-radius: 14px;
+  padding: 22px;
+  /* Empieza invisible y aparece con su retraso */
+  opacity: 0;
+  animation: mostrar-paso 0.6s ease forwards;
+  /* Se levanta al pasar el mouse */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación: la tarjeta sube mientras aparece */
+@keyframes mostrar-paso {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* El círculo azul con el número del paso */
+.paso-numero {
+  width: 36px;
+  height: 36px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+/* El título del paso */
+.paso-titulo {
+  font-family: "Segoe UI";
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* El texto del paso */
+.paso-texto {
+  font-size: 14px;
+  color: #1A1D20;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+/* Este paso aparece despues del anterior */
+.pasouno {
+  animation-delay: 0.1s;
+}

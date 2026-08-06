@@ -1,0 +1,17 @@
+/* Fila con las cuatro tarjetas de totales */
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+/* En tablet se acomodan en dos filas */
+@media (max-width: 800px) {
+  .resumen { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* En celular una por una */
+@media (max-width: 480px) {
+  .resumen { grid-template-columns: 1fr; }
+}

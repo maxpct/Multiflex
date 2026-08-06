@@ -1,0 +1,59 @@
+/* Enlaces del menú. Ahora son botones, pero se ven igual que antes. */
+.enlace {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Segoe UI";
+  color: #1A1D20;
+  padding: 8px 4px;
+  margin: 0 8px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Línea azul que crece debajo del enlace al pasar el mouse */
+.enlace::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 0;
+  height: 2px;
+  background-color: #007BFF;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.enlace:hover {
+  color: #007BFF;
+}
+
+.enlace:hover::after {
+  transform: scaleX(1);
+}
+
+/* La página en la que estamos se queda marcada */
+.enlace.activo {
+  color: #007BFF;
+  font-weight: 600;
+}
+
+.enlace.activo::after {
+  transform: scaleX(1);
+}
+
+/* En celular los enlaces se ven uno debajo del otro */
+@media (max-width: 700px) {
+  .enlace {
+    padding: 14px 20px;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .enlace::after { display: none; }
+}

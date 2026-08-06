@@ -1,0 +1,25 @@
+/* Título grande del hero */
+.portada-titulo {
+  font-family: "Segoe UI";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  max-width: 780px;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  /* Empieza invisible y aparece después de la barra */
+  opacity: 0;
+  animation: subir-titulo 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Animación: el título sube y aparece */
+@keyframes subir-titulo {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .portada-titulo { font-size: 34px; }
+}

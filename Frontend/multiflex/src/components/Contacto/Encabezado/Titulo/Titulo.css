@@ -1,0 +1,24 @@
+/* Título grande de la franja de arriba.*/
+.contact-titulo {
+  font-family: "Segoe UI";
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  /* Aparece subiendo un poco */
+  opacity: 0;
+  animation: mostrar-titulo 0.7s ease forwards;
+}
+
+/* Animación: el título sube mientras aparece */
+@keyframes mostrar-titulo {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* En celular el título es más chico */
+@media (max-width: 700px) {
+  .contact-titulo { font-size: 26px; }
+}

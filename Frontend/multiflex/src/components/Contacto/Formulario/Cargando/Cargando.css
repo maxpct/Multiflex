@@ -1,0 +1,16 @@
+/* Aviso de que el PDF se está generando */
+.cargando {
+  margin-top: 12px;
+  color: #007BFF;
+  font-size: 14px;
+  font-weight: 600;
+  /* Parpadea muy suave para que se note que está trabajando */
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+/* Animación: el texto se aclara y se oscurece despacio */
+@keyframes latir {
+  0% { opacity: 1; }
+  50% { opacity: 0.45; }
+  100% { opacity: 1; }
+}

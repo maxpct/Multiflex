@@ -1,0 +1,8 @@
+/* Texto del aviso de panel vacío */
+.dash-vacio-texto {
+  font-size: 15px;
+  color: #1A1D20;
+  opacity: 0.7;
+  max-width: 420px;
+  margin-bottom: 20px;
+}

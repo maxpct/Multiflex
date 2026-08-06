@@ -1,0 +1,26 @@
+/* Botón del filtro. Todos comparten la clase "filtro". */
+.filtro {
+  background-color: #FFFFFF;
+  border: 1px solid #E9ECEF;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1D20;
+  padding: 9px 18px;
+  /* Cambia de color suavemente al pasar el mouse */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.filtro:hover {
+  background-color: #E9ECEF;
+  transform: translateY(-2px);
+}
+
+/* El filtro que está elegido se pinta de azul */
+.filtro.activo {
+  background-color: #007BFF;
+  border-color: #007BFF;
+  color: #FFFFFF;
+}

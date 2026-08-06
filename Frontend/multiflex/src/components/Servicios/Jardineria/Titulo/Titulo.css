@@ -1,0 +1,8 @@
+/* Título de la vista completa */
+.detalle-titulo {
+  font-family: "Segoe UI";
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-bottom: 12px;
+}

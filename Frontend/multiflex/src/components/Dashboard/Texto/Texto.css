@@ -1,0 +1,7 @@
+/* Texto debajo del título del dashboard */
+.dashboard-texto {
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 26px;
+  opacity: 0.8;
+}

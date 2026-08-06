@@ -1,0 +1,7 @@
+/* Texto debajo del título de servicios (siempre visible) */
+.servicios-texto {
+  color: #1A1D20;
+  font-size: 15px;
+  max-width: 620px;
+  margin-bottom: 20px;
+}

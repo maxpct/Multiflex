@@ -1,0 +1,32 @@
+/* Tarjeta del resumen */
+.tarjeta-proceso {
+  background-color: #FFFFFF;
+  border: 1px solid #E9ECEF;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  /* Aparece subiendo un poco */
+  animation: subir-tarjeta-proceso 0.5s ease;
+  /* Se levanta al pasar el mouse */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-proceso:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación: la tarjeta sube mientras aparece */
+@keyframes subir-tarjeta-proceso {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* La barrita de color de abajo */
+.tarjeta-proceso-barra {
+  height: 4px;
+  width: 40px;
+  background-color: #6C5CE7;
+  border-radius: 2px;
+  margin-top: 12px;
+}

@@ -1,0 +1,8 @@
+/* El "¡Gracias!" que sale al enviar el formulario */
+.gracias {
+  font-family: "Segoe UI";
+  font-size: 22px;
+  font-weight: 700;
+  color: #007BFF;
+  margin-bottom: 8px;
+}

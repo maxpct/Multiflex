@@ -1,0 +1,20 @@
+/* Título del dashboard */
+.dashboard-titulo {
+  font-family: "Segoe UI";
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+/* Línea azul debajo del título */
+.dashboard-titulo::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  background-color: #007BFF;
+  border-radius: 2px;
+  margin-top: 8px;
+}

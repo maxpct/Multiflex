@@ -1,0 +1,33 @@
+/* Sección del comprobante en PDF (PDFMonkey).
+   Ocupa toda la pantalla, igual que el hero. */
+.documento {
+  min-height: 100vh;
+  padding: 40px 0;
+  scroll-margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* El título, el texto y los botones van alineados con las demás secciones */
+.documento-encabezado {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Los botones se acomodan en fila y bajan solos en celular */
+.documento-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+
+@media (max-width: 600px) {
+  .documento {
+    min-height: auto;
+    padding: 32px 0;
+  }
+}

@@ -1,0 +1,16 @@
+/* Subtítulo de la franja de arriba */
+.contact-subtitulo {
+  color: #E9ECEF;
+  font-size: 17px;
+  max-width: 560px;
+  /* Aparece después del título */
+  opacity: 0;
+  animation: mostrar-subtitulo 0.7s ease forwards;
+  animation-delay: 0.15s;
+}
+
+/* Animación: el subtítulo sube mientras aparece */
+@keyframes mostrar-subtitulo {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,8 @@
+/* Título del aviso de panel vacío */
+.dash-vacio-titulo {
+  font-family: "Segoe UI";
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A1D20;
+  margin-bottom: 6px;
+}

@@ -1,0 +1,14 @@
+/* Aviso de abajo del botón */
+.contact-nota {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #6C757D;
+}
+
+/* En este aviso el candado va gris, no azul */
+.contact-nota .contact-icono {
+  color: #6C757D;
+}

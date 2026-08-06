@@ -1,0 +1,24 @@
+.hero-texto{
+  font-size:20px;
+  max-width:580px;
+  margin-bottom:34px;
+  color:#E9ECEF;
+
+  opacity:0;
+  animation:subir-texto .8s ease forwards;
+  animation-delay:.6s;
+}
+
+@keyframes subir-texto{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}

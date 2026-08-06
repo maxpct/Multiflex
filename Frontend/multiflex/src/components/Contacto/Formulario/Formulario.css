@@ -1,0 +1,48 @@
+/* La caja blanca del formulario.
+   Los estilos de los campos ahora están en la carpeta de cada campo. */
+.contact-formulario {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.10);
+  padding: 22px;
+  /* Aparece subiendo despacito */
+  opacity: 0;
+  animation: mostrar-formulario 0.7s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Animación: el formulario sube mientras aparece */
+@keyframes mostrar-formulario {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Fila de tres campos, uno al lado del otro */
+.contact-fila-tres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* Fila de dos campos */
+.contact-fila-dos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+
+/* En celular todas las filas se hacen de una sola columna */
+@media (max-width: 700px) {
+  .contact-fila-tres,
+  .contact-fila-dos {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-formulario {
+    padding: 18px;
+  }
+}

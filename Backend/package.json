@@ -1,0 +1,23 @@
+{
+  "name": "multiflex-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Multiflex project",
+  "type": "module",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "node src/App.js",
+    "dev": "nodemon src/App.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^4.21.2",
+    "mysql2": "^3.22.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

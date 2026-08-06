@@ -1,0 +1,48 @@
+/* Este campo lleva su etiqueta arriba y su cuadro abajo */
+.contact-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+/* La etiqueta con su icono a un lado */
+.contact-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #1A1D20;
+}
+
+/* El cuadro donde se escribe */
+.contact-cuadro {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #E4E7EB;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  font-family: "Segoe UI";
+  font-size: 14px;
+  color: #1A1D20;
+  /* El borde se pinta de azul y brilla suave cuando escribimos */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-cuadro:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.12);
+}
+
+/* El texto de ejemplo que sale antes de escribir */
+.contact-cuadro::placeholder {
+  color: #A8AFB6;
+}
+
+/* El cuadro del problema es más alto que los demás */
+.contact-area {
+  min-height: 66px;
+  resize: none;
+}

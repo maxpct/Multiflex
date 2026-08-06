@@ -1,0 +1,25 @@
+/* Quitamos los márgenes que trae el navegador por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Hace que al dar clic en un enlace la página baje suavemente */
+  scroll-behavior: smooth;
+  /* Deja un espacio arriba al navegar con los links, para que la barra fija
+     NO tape los títulos (así ya no se ven cortados) */
+  scroll-padding-top: 90px;
+}
+
+/* Colores y letra de toda la página */
+body {
+  font-family: "Segoe UI";
+  color: #1A1D20;
+  background-color: #FFFFFF;
+  /* Hace que el texto se vea más nítido y profesional */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}

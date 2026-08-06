@@ -1,0 +1,14 @@
+/* La etiqueta redonda del estado */
+.estado {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+
+/* Cada estado con su color */
+.estado-pendiente { background-color: #E0A800; }
+.estado-proceso   { background-color: #6C5CE7; }
+.estado-terminada { background-color: #28A745; }

@@ -1,0 +1,19 @@
+/* Aviso cuando el filtro no encontró nada */
+.tabla-vacia {
+  background-color: #FFFFFF;
+  border: 1px dashed #E9ECEF;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: #1A1D20;
+  opacity: 0.6;
+  margin-bottom: 30px;
+  /* Aparece suavemente */
+  animation: mostrar-vacia 0.4s ease;
+}
+
+/* Animación: el aviso aparece */
+@keyframes mostrar-vacia {
+  from { opacity: 0; }
+  to { opacity: 0.6; }
+}

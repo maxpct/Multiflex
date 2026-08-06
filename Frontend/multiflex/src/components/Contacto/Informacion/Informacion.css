@@ -1,0 +1,41 @@
+/* La tarjeta blanca de contacto directo */
+.contact-tarjeta {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.10);
+  padding: 22px;
+  /* Aparece un poquito después del formulario */
+  opacity: 0;
+  animation: mostrar-tarjeta 0.7s ease forwards;
+  animation-delay: 0.35s;
+}
+
+/* Animación: la tarjeta sube mientras aparece */
+@keyframes mostrar-tarjeta {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cada renglón de la tarjeta: el icono y el dato */
+.contact-dato {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 13px;
+  font-size: 14px;
+  color: #1A1D20;
+}
+
+/* El teléfono y el correo van en azul porque son enlaces */
+.contact-dato-enlace {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 600;
+  /* Se aclara al pasar el mouse */
+  transition: opacity 0.3s ease;
+}
+
+.contact-dato-enlace:hover {
+  opacity: 0.75;
+}

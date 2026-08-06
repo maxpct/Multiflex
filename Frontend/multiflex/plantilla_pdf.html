@@ -1,0 +1,270 @@
+<style>
+  /* Tamaño de hoja y sin márgenes, para poder poner la franja de arriba */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1A1D20;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* Franja azul de arriba */
+  .franja {
+    height: 10px;
+    background-color: #007BFF;
+  }
+
+  /* Todo el contenido va con este margen */
+  .hoja {
+    padding: 34px 46px 0 46px;
+  }
+
+  /* ---------- ENCABEZADO ---------- */
+  .encabezado {
+    width: 100%;
+    border-bottom: 1px solid #E9ECEF;
+    padding-bottom: 18px;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  .empresa {
+    text-align: right;
+    font-size: 11px;
+    color: #6C757D;
+    line-height: 1.6;
+  }
+
+  .empresa-nombre {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1D20;
+  }
+
+  /* ---------- TÍTULO Y FOLIO ---------- */
+  .titulo-fila {
+    width: 100%;
+    margin-top: 26px;
+  }
+
+  .titulo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin: 0;
+  }
+
+  .subtitulo {
+    font-size: 12px;
+    color: #6C757D;
+    margin: 2px 0 0 0;
+  }
+
+  /* La caja gris del folio, del lado derecho */
+  .folio-caja {
+    background-color: #F1F3F5;
+    border-radius: 8px;
+    padding: 10px 16px;
+    text-align: right;
+  }
+
+  .folio-etiqueta {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6C757D;
+    margin: 0;
+  }
+
+  .folio-numero {
+    font-size: 15px;
+    font-weight: 700;
+    color: #007BFF;
+    margin: 2px 0 0 0;
+  }
+
+  /* La etiqueta azul del estado */
+  .estado {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-top: 18px;
+  }
+
+  /* ---------- DATOS DEL CLIENTE ---------- */
+  .seccion-titulo {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #007BFF;
+    margin: 30px 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #007BFF;
+  }
+
+  .datos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .datos td {
+    padding: 9px 0;
+    border-bottom: 1px solid #F1F3F5;
+    vertical-align: top;
+  }
+
+  .dato-nombre {
+    width: 130px;
+    color: #6C757D;
+    font-size: 12px;
+  }
+
+  .dato-valor {
+    font-weight: 600;
+  }
+
+  /* ---------- CAJA DE LA DESCRIPCIÓN ---------- */
+  .descripcion {
+    background-color: #F7F8FA;
+    border-left: 4px solid #007BFF;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 18px;
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  /* ---------- QUÉ SIGUE ---------- */
+  .siguiente {
+    margin-top: 26px;
+    font-size: 12px;
+    color: #495057;
+  }
+
+  .siguiente p {
+    margin: 6px 0;
+  }
+
+  .punto {
+    color: #007BFF;
+    font-weight: 700;
+  }
+
+  /* ---------- PIE ---------- */
+  .pie {
+    margin-top: 34px;
+    border-top: 1px solid #E9ECEF;
+    padding-top: 14px;
+    font-size: 10px;
+    color: #ADB5BD;
+    text-align: center;
+    line-height: 1.7;
+  }
+</style>
+
+<div class="franja"></div>
+
+<div class="hoja">
+
+  <!-- ENCABEZADO: logo a la izquierda y datos de la empresa a la derecha -->
+  <table class="encabezado">
+    <tr>
+      <td>
+        <img class="logo" src="{{ logo }}" alt="Multiflex" />
+      </td>
+      <td class="empresa">
+        <div class="empresa-nombre">Multiflex</div>
+        Mantenimiento y reparación<br />
+        Aguascalientes, Ags. · Tel. 449 393 9629<br />
+        contacto@multiflex.com
+      </td>
+    </tr>
+  </table>
+
+  <!-- TÍTULO Y FOLIO -->
+  <table class="titulo-fila">
+    <tr>
+      <td>
+        <p class="titulo">Comprobante de solicitud</p>
+        <p class="subtitulo">Generado el {{ fecha }}</p>
+      </td>
+      <td width="180">
+        <div class="folio-caja">
+          <p class="folio-etiqueta">Folio</p>
+          <p class="folio-numero">{{ folio }}</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <span class="estado">{{ estado }}</span>
+
+  <!-- DATOS DEL CLIENTE -->
+  <p class="seccion-titulo">Datos del cliente</p>
+
+  <table class="datos">
+    <tr>
+      <td class="dato-nombre">Nombre</td>
+      <td class="dato-valor">{{ nombre }}</td>
+    </tr>
+    <tr>
+      <td class="dato-nombre">Teléfono</td>
+      <td class="dato-valor">{{ telefono }}</td>
+    </tr>
+    <tr>
+      <td class="dato-nombre">Correo</td>
+      <td class="dato-valor">{{ correo }}</td>
+    </tr>
+  </table>
+
+  <!-- DATOS DEL SERVICIO -->
+  <p class="seccion-titulo">Servicio solicitado</p>
+
+  <table class="datos">
+    <tr>
+      <td class="dato-nombre">Servicio</td>
+      <td class="dato-valor">{{ servicio }}</td>
+    </tr>
+    <tr>
+      <td class="dato-nombre">Colonia o ubicación</td>
+      <td class="dato-valor">{{ colonia }}</td>
+    </tr>
+    <tr>
+      <td class="dato-nombre">Fecha de registro</td>
+      <td class="dato-valor">{{ fecha }}</td>
+    </tr>
+  </table>
+
+  <p class="seccion-titulo">Descripción</p>
+
+  <div class="descripcion">
+    {{ descripcion }}
+  </div>
+
+  <!-- QUÉ SIGUE -->
+  <div class="siguiente">
+    <p><span class="punto">1.</span> Un asesor de Multiflex te contactará para confirmar la visita.</p>
+    <p><span class="punto">2.</span> Se realiza el diagnóstico y se te informa el costo final.</p>
+    <p><span class="punto">3.</span> Se ejecuta el servicio con garantía por escrito.</p>
+  </div>
+
+  <!-- PIE -->
+  <div class="pie">
+    Este documento es un comprobante de registro de solicitud y no representa un contrato de servicio.<br />
+    El costo final depende del diagnóstico realizado en sitio.<br />
+    Multiflex · Aguascalientes, Ags. · multiflex-ags.netlify.app
+  </div>
+
+</div>

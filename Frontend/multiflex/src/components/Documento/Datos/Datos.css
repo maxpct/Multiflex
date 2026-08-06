@@ -1,0 +1,27 @@
+/* Fila con el folio, la fecha y el estado */
+.documento-datos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.dato-folio {
+  font-weight: 700;
+  color: #1A1D20;
+}
+
+.dato-fecha {
+  color: #1A1D20;
+  opacity: 0.7;
+}
+
+/* El estado se ve como una etiqueta azul */
+.dato-estado {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}

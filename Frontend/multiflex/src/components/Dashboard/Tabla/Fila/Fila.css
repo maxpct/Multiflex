@@ -1,0 +1,21 @@
+/* Una fila de la tabla */
+.fila {
+  /* El fondo cambia suave al pasar el mouse */
+  transition: background-color 0.25s ease;
+}
+
+.fila:hover {
+  background-color: #F7F8FA;
+}
+
+.fila td {
+  padding: 13px 16px;
+  border-bottom: 1px solid #F1F3F5;
+  color: #1A1D20;
+  white-space: nowrap;
+}
+
+/* El folio se ve en negritas */
+.fila-folio {
+  font-weight: 600;
+}

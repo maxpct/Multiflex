@@ -1,0 +1,24 @@
+/* Botón azul para abrir el PDF */
+.boton-ver {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 11px 22px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+  /* Sube y se oscurece al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-ver:hover {
+  background-color: #0062CC;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(0, 123, 255, 0.4);
+}
+
+.boton-ver:active {
+  transform: translateY(-1px);
+}

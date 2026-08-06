@@ -1,0 +1,25 @@
+/* Botón que va encima de la imagen y baja al formulario */
+.contact-boton-bajar {
+  display: inline-block;
+  margin-top: 22px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  /* Sube y se oscurece al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-boton-bajar:hover {
+  background-color: #0062CC;
+  transform: translateY(-3px);
+}
+
+.contact-boton-bajar:active {
+  transform: translateY(-1px);
+}

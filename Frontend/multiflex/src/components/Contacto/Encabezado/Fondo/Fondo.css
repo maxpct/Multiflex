@@ -1,0 +1,17 @@
+/* La foto cubre toda la franja sin deformarse */
+.contact-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Se acerca despacito al entrar */
+  animation: acercar-fondo 2s ease-out forwards;
+}
+
+/* Animación: la foto se acerca muy poquito */
+@keyframes acercar-fondo {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}

@@ -1,0 +1,13 @@
+/* Títulos de las columnas de la tabla */
+.encabezado th {
+  text-align: left;
+  font-weight: 600;
+  color: #1A1D20;
+  opacity: 0.6;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #E9ECEF;
+  white-space: nowrap;
+}

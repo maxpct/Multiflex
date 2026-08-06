@@ -1,0 +1,24 @@
+/* Caja blanca que envuelve la tabla */
+.tabla-caja {
+  background-color: #FFFFFF;
+  border: 1px solid #E9ECEF;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  margin-bottom: 30px;
+  /* Aparece subiendo un poco */
+  animation: subir-tabla 0.5s ease;
+}
+
+/* Animación: la tabla sube mientras aparece */
+@keyframes subir-tabla {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* La tabla en sí */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}

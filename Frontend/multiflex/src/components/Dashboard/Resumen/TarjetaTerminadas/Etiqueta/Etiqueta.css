@@ -1,0 +1,10 @@
+/* La palabra de arriba de la tarjeta */
+.tarjeta-terminadas-etiqueta {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1A1D20;
+  opacity: 0.55;
+  margin-bottom: 8px;
+}

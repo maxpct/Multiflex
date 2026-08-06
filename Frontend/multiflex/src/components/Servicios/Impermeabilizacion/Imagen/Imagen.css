@@ -1,0 +1,15 @@
+/* Imagen grande de la vista completa */
+.detalle-imagen {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background-color: #E9ECEF;
+  border-radius: 10px;
+  margin-bottom: 22px;
+  display: block;
+}
+
+/* En celular la imagen es más baja */
+@media (max-width: 600px) {
+  .detalle-imagen { height: 190px; }
+}

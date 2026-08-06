@@ -1,0 +1,42 @@
+/* Sección de servicios */
+.servicios {
+  padding: 40px 0;
+  scroll-margin-top: 90px;
+}
+
+/* Mismo ancho que la barra, el hero y el footer */
+.servicios-contenido {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Las tarjetas van en una rejilla de 3 columnas */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Cada servicio ocupa toda su casilla de la rejilla */
+.servicio {
+  height: 100%;
+}
+
+/* Cada tarjeta se puede hacer clic */
+.card-clic {
+  cursor: pointer;
+  height: 100%;
+}
+
+/* En tablet mostramos 2 columnas */
+@media (max-width: 900px) {
+  .tarjetas { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* En celular solo 1 columna */
+@media (max-width: 600px) {
+  .tarjetas { grid-template-columns: 1fr; }
+  .servicios { padding: 32px 0; }
+}

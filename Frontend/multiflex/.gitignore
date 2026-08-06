@@ -1,0 +1,6 @@
+node_modules
+build
+.DS_Store
+
+# No subimos el .env porque trae la llave secreta
+.env

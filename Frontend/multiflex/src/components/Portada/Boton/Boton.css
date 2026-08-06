@@ -1,0 +1,38 @@
+/* Botón del hero que lleva a la subpágina de contacto */
+.portada-boton {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  font-family: "Segoe UI";
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 34px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  /* Aparece al final, después del texto */
+  opacity: 0;
+  animation: subir-boton 0.8s ease forwards;
+  animation-delay: 0.9s;
+  /* Movimiento suave al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* El botón se oscurece, sube y gana sombra al pasar el mouse */
+.portada-boton:hover {
+  background-color: #0062CC;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 123, 255, 0.45);
+}
+
+.portada-boton:active {
+  transform: translateY(-1px);
+}
+
+/* Animación: el botón sube y aparece */
+@keyframes subir-boton {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

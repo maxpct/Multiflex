@@ -1,0 +1,21 @@
+/* Enlace que lleva al comprobante en PDF */
+.enlace-comprobante {
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Segoe UI";
+  padding: 0;
+  margin-top: 16px;
+  color: #007BFF;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  /* Se recorre un poco al pasar el mouse */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.enlace-comprobante:hover {
+  transform: translateX(3px);
+  opacity: 0.8;
+}

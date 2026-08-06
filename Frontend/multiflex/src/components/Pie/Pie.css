@@ -1,0 +1,36 @@
+/* Pie de página */
+.pie {
+  background-color: #1A1D20;
+  color: #E9ECEF;
+  padding: 50px 0 34px;
+}
+
+/* Mismo ancho que las demás secciones */
+.pie-contenido {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pie-nombre {
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 22px;
+  color: #FFFFFF;
+  margin: 12px 0 8px;
+}
+
+.pie p {
+  margin-bottom: 8px;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.pie-derechos {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  opacity: 0.7;
+}

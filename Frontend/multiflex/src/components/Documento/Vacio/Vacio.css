@@ -1,0 +1,58 @@
+/* Caja que se muestra cuando todavía no hay PDF */
+.vacio {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.vacio-caja {
+  width: 100%;
+  min-height: 60vh;
+  border: 2px dashed #007BFF;
+  border-radius: 12px;
+  background-color: #F4F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.vacio-titulo {
+  font-family: "Segoe UI";
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A1D20;
+  margin-bottom: 6px;
+}
+
+.vacio-texto {
+  font-size: 15px;
+  color: #1A1D20;
+  opacity: 0.75;
+  margin-bottom: 16px;
+}
+
+.vacio-enlace {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  color: #007BFF;
+  font-weight: 600;
+  text-decoration: none;
+  /* Se recorre un poco al pasar el mouse */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: inline-block;
+}
+
+.vacio-enlace:hover {
+  transform: translateX(3px);
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .vacio { padding: 0 12px; }
+  .vacio-caja { min-height: 340px; }
+}

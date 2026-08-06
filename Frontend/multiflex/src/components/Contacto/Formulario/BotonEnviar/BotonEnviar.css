@@ -1,0 +1,34 @@
+/* Botón azul que envía el formulario */
+.contact-boton {
+  width: 100%;
+  margin-top: 14px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  font-family: "Segoe UI";
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.22);
+  /* Sube y se oscurece al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-boton:hover {
+  background-color: #0062CC;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 123, 255, 0.35);
+}
+
+.contact-boton:active {
+  transform: translateY(0);
+}
+
+/* Mientras se genera el PDF el botón se ve apagado */
+.contact-boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

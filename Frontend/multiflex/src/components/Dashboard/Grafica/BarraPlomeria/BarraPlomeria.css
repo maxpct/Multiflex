@@ -1,0 +1,57 @@
+/* Renglón de la barra: nombre, barra y número.
+   Todas las barras comparten estas clases. */
+.barra-fila {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* El nombre del servicio */
+.barra-nombre {
+  width: 150px;
+  font-size: 14px;
+  color: #1A1D20;
+  flex-shrink: 0;
+}
+
+/* El carril gris donde va la barra */
+.barra-pista {
+  flex-grow: 1;
+  height: 22px;
+  background-color: #F1F3F5;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+/* La barra azul */
+.barra-relleno {
+  height: 100%;
+  background-color: #007BFF;
+  border-radius: 11px;
+  /* La barra crece de izquierda a derecha al aparecer */
+  animation: crecer-barra 0.8s ease;
+  /* Y también se anima cuando el número cambia */
+  transition: width 0.5s ease;
+}
+
+/* Animación: la barra crece desde cero */
+@keyframes crecer-barra {
+  from { transform: scaleX(0); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+
+/* El número al final */
+.barra-numero {
+  width: 24px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 14px;
+  color: #007BFF;
+  flex-shrink: 0;
+}
+
+/* En celular el nombre se hace más angosto */
+@media (max-width: 600px) {
+  .barra-nombre { width: 100px; font-size: 13px; }
+}

@@ -1,0 +1,8 @@
+/* Todos los iconos comparten la clase "contact-icono" */
+.contact-icono {
+  width: 18px;
+  height: 18px;
+  /* Hace que la imagen se acomode sin deformarse */
+  object-fit: contain;
+  flex-shrink: 0;
+}

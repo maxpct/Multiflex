@@ -1,0 +1,49 @@
+/* Toda la página de contacto */
+.contact-pagina {
+  background-color: #F7F8FA;
+  padding-bottom: 34px;
+  /* La página ocupa justo lo que mide la pantalla,
+     menos la barra de arriba, para no tener que bajar. */
+  min-height: calc(100vh - 72px);
+  scroll-margin-top: 72px;
+}
+
+/* Aquí van las tarjetas. El margen de arriba es negativo
+   para que se monten encima de la franja de la foto.
+
+   Entre más grande sea este número, más se suben las tarjetas
+   y más grande se ve la foto de atrás. */
+.contact-cuerpo {
+  width: 100%;
+  max-width: 1240px;
+  /* Ocupa justo lo que queda de pantalla debajo de la barra */
+  min-height: calc(100vh - 72px);
+  margin: 0 auto;
+  padding: 34px 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* El formulario a la izquierda y la tarjeta a la derecha */
+.contact-fila {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* El lado derecho: la tarjeta de contacto y la foto */
+.contact-lado {
+  width: 100%;
+}
+
+/* En tablet y celular se acomodan uno debajo del otro */
+@media (max-width: 900px) {
+  .contact-fila {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cuerpo {
+    margin-top: -120px;
+  }
+}

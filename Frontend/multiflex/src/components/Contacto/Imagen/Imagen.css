@@ -1,0 +1,20 @@
+/* Foto que va debajo de la tarjeta de contacto */
+.contact-imagen {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin-top: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+  /* Aparece al final, después de la tarjeta */
+  opacity: 0;
+  animation: mostrar-foto 0.7s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animación: la foto aparece subiendo un poco */
+@keyframes mostrar-foto {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,27 @@
+/* Caja que envuelve los tres pasos */
+.pasos-caja {
+  width: 100%;
+  max-width: 1100px;
+  margin: 34px auto 0;
+  padding: 0 20px;
+}
+
+/* El título de arriba de los pasos */
+.pasos-titulo {
+  font-family: "Segoe UI";
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* Los tres pasos en fila */
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* En celular se acomodan uno debajo de otro */
+@media (max-width: 800px) {
+  .pasos { grid-template-columns: 1fr; }
+}

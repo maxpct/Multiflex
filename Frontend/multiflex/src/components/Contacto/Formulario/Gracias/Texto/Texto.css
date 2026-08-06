@@ -1,0 +1,6 @@
+/* Texto que va debajo del "¡Gracias!" */
+.gracias-texto {
+  font-size: 15px;
+  color: #1A1D20;
+  opacity: 0.8;
+}
