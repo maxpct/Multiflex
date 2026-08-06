@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import servicesRoutes from './routes/services.routes.js';
 import requestsRoutes from './routes/requests.routes.js';
 import pool from './config/db.js';
+import pdfmonkeyRoutes from './routes/pdfmonkey.routes.js';
+import correoRoutes from './routes/correo.routes.js';
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/services', servicesRoutes);
 app.use('/api/requests', requestsRoutes);
+app.use('/api/pdfmonkey', pdfmonkeyRoutes);
+app.use('/api/correo', correoRoutes);
 
 app.use((req, res) => {
     res.status(404).json({
