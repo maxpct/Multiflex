@@ -1,4 +1,11 @@
-import { createRequestModel, getAllRequestsModel } from "../models/request.model.js";
+import {
+    createRequestModel,
+    getAllRequestsModel,
+    updateRequestStatusModel,
+    deleteRequestModel,
+    getPremiumServicesModel,
+    getServiceStatisticsModel
+} from "../models/request.model.js";
 
 export const createRequest = async (req, res) => {
 
@@ -69,6 +76,145 @@ export const getAllRequests = async (req, res) => {
     try {
 
         const requests = await getAllRequestsModel();
+
+        return res.status(200).json(requests);
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+            message: "Error interno del servidor."
+
+        });
+
+    }
+
+};
+
+// ACTUALIZAR ESTADO
+export const updateRequestStatus = async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+        const { estado } = req.body;
+
+        await updateRequestStatusModel(id, estado);
+
+        return res.status(200).json({
+
+            success: true,
+            message: "Estado actualizado correctamente."
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+            message: "Error interno del servidor."
+
+        });
+
+    }
+
+};
+
+
+// ELIMINAR SOLICITUD
+export const deleteRequest = async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        await deleteRequestModel(id);
+
+        return res.status(200).json({
+
+            success: true,
+            message: "Solicitud eliminada correctamente."
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+            message: "Error interno del servidor."
+
+        });
+
+    }
+
+};
+
+
+// SERVICIOS MÁS CAROS (SUBQUERY)
+export const getPremiumServices = async (req, res) => {
+
+    try {
+
+        const services = await getPremiumServicesModel();
+
+        return res.status(200).json(services);
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+            message: "Error interno del servidor."
+
+        });
+
+    }
+
+};
+
+
+// ESTADÍSTICAS (GROUP BY + HAVING)
+export const getServiceStatistics = async (req, res) => {
+
+    try {
+
+        const statistics = await getServiceStatisticsModel();
+
+        return res.status(200).json(statistics);
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+            message: "Error interno del servidor."
+
+        });
+
+    }
+
+};
+
+export const getRequestsByClient = async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        const requests = await getRequestsByClientModel(id);
 
         return res.status(200).json(requests);
 

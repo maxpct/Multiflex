@@ -117,3 +117,118 @@ export const getAllRequestsModel = async () => {
 
     return rows;
 };
+
+// ACTUALIZAR EL ESTADO DE UNA SOLICITUD
+export const updateRequestStatusModel = async (id, estado) => {
+
+    const [result] = await pool.query(
+
+        `UPDATE solicitudes
+        SET id_estado = ?
+        WHERE id_solicitud = ?`,
+
+        [estado, id]
+
+    );
+
+    return result;
+
+};
+
+
+// ELIMINAR UNA SOLICITUD
+export const deleteRequestModel = async (id) => {
+
+    const [result] = await pool.query(
+
+        `DELETE
+        FROM solicitudes
+        WHERE id_solicitud = ?`,
+
+        [id]
+
+    );
+
+    return result;
+
+};
+
+
+// SUBQUERY
+export const getPremiumServicesModel = async () => {
+
+    const [rows] = await pool.query(
+
+        `SELECT
+            nombre,
+            precio,
+            descripcion
+
+        FROM servicios
+
+        WHERE precio >
+
+        (
+            SELECT AVG(precio)
+            FROM servicios
+        )`
+
+    );
+
+    return rows;
+
+};
+
+
+// GROUP BY + HAVING
+export const getServiceStatisticsModel = async () => {
+
+    const [rows] = await pool.query(
+
+        `SELECT
+
+            se.nombre,
+            COUNT(*) AS totalSolicitudes
+
+        FROM solicitudes s
+
+        INNER JOIN servicios se
+
+        ON s.id_servicio = se.id_servicio
+
+        GROUP BY se.nombre
+
+        HAVING COUNT(*) >= 1
+
+        ORDER BY totalSolicitudes DESC`
+
+    );
+
+    return rows;
+
+};
+
+export const getRequestsByClient = async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        const requests = await getRequestsByClientModel(id);
+
+        return res.status(200).json(requests);
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+            message: "Error interno del servidor."
+
+        });
+
+    }
+
+};
