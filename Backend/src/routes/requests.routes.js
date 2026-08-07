@@ -7,7 +7,6 @@ import {
     updateRequestStatus,
     deleteRequest,
     getPremiumServices,
-    getRequestsByClient,
     getServiceStatistics
 
 } from '../controllers/requests.controller.js';
@@ -25,7 +24,5 @@ router.delete('/:id', deleteRequest);
 router.get('/premium', getPremiumServices);
 
 router.get('/statistics', getServiceStatistics);
-
-router.get('/cliente/:id', getRequestsByClient);
 
 export default router;
