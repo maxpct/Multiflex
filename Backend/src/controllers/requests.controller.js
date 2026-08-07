@@ -4,13 +4,14 @@ import {
     updateRequestStatusModel,
     deleteRequestModel,
     getPremiumServicesModel,
-    getServiceStatisticsModel
+    getServiceStatisticsModel,
+    getRequestsByClientModel // <-- Importación agregada para que no te tire error
 } from "../models/request.model.js";
 
 export const createRequest = async (req, res) => {
 
     try {
-
+        
         const {
             nombre,
             telefono,
