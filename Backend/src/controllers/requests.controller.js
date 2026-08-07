@@ -5,7 +5,6 @@ import {
     deleteRequestModel,
     getPremiumServicesModel,
     getServiceStatisticsModel,
-    getRequestsByClientModel // <-- Importación agregada para que no te tire error
 } from "../models/request.model.js";
 
 export const createRequest = async (req, res) => {
@@ -193,31 +192,6 @@ export const getServiceStatistics = async (req, res) => {
         const statistics = await getServiceStatisticsModel();
 
         return res.status(200).json(statistics);
-
-    } catch (error) {
-
-        console.error(error);
-
-        return res.status(500).json({
-
-            success: false,
-            message: "Error interno del servidor."
-
-        });
-
-    }
-
-};
-
-export const getRequestsByClient = async (req, res) => {
-
-    try {
-
-        const { id } = req.params;
-
-        const requests = await getRequestsByClientModel(id);
-
-        return res.status(200).json(requests);
 
     } catch (error) {
 

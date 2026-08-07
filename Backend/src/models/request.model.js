@@ -11,7 +11,7 @@ export const createRequestModel = async (data) => {
         // Buscar el ID del servicio por su nombre
         const [service] = await connection.query(
             `SELECT id_servicio
-            FROM servicios
+            FROM servicios  
             WHERE TRIM(LOWER(nombre)) = TRIM(LOWER(?))`,
             [data.servicio]
         );
@@ -205,30 +205,5 @@ export const getServiceStatisticsModel = async () => {
     );
 
     return rows;
-
-};
-
-export const getRequestsByClient = async (req, res) => {
-
-    try {
-
-        const { id } = req.params;
-
-        const requests = await getRequestsByClientModel(id);
-
-        return res.status(200).json(requests);
-
-    } catch (error) {
-
-        console.error(error);
-
-        return res.status(500).json({
-
-            success: false,
-            message: "Error interno del servidor."
-
-        });
-
-    }
 
 };
