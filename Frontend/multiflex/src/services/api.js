@@ -1,7 +1,7 @@
-// Guardamos la URL base de nuestra API
-// Esta dirección viene del archivo .env mediante la variable VITE_API_URL
-// Así no tenemos que escribir la URL completa en cada petición.
-const API_URL = "https://multiflex-tak3.onrender.com/api";
+// Guardamos la URL base de nuestra API.
+// La dirección viene del archivo .env, en la variable REACT_APP_API_URL.
+// Si no estuviera puesta, usamos la de Render para que el sitio no se caiga.
+const API_URL = process.env.REACT_APP_API_URL || 'https://multiflex-tak3.onrender.com/api';
 
 // Exportamos la función para poder utilizarla en otros archivos
 // async significa que esta función hará una petición y tendrá que esperar

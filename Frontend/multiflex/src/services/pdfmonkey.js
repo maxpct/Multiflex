@@ -8,12 +8,13 @@
 
 // Esta es la dirección a la que le pedimos el PDF.
 // No le hablamos directo a api.pdfmonkey.io porque el navegador
-// no lo permite por seguridad (sale el error de CORS).
-// En vez de eso le hablamos a nuestra propia página ("/api/pdfmonkey")
-// y del otro lado hay un intermediario que sí puede llamar a PDFMonkey:
-//   - En la computadora:  src/setupProxy.js
-//   - Ya publicado:       netlify/functions/pdfmonkey.js
-const URL_API = '/api/pdfmonkey';
+// no lo permite por seguridad (sale el error de CORS), y además
+// la llave es secreta y no puede estar en el navegador.
+// En vez de eso le hablamos a NUESTRO backend, que sí puede
+// llamar a PDFMonkey porque él sí tiene la llave.
+// Si la variable no estuviera puesta, usamos la de Render
+// para que el sitio no se caiga.
+const URL_API = (process.env.REACT_APP_API_URL || 'https://multiflex-tak3.onrender.com/api') + '/pdfmonkey';
 
 // Aquí guardamos el ID de la plantilla que hicimos en PDFMonkey.
 // El valor sale del archivo .env
@@ -167,9 +168,12 @@ export async function generarPdf(datos) {
   const estado = 'Solicitud recibida';
 
   // Armamos la dirección del logo.
-  // window.location.origin es la dirección de nuestra página,
-  // por ejemplo https://multiflex-ags.netlify.app
-  const logo = window.location.origin + '/logo.png';
+  // Tiene que ser una dirección PÚBLICA, porque PDFMonkey
+  // la descarga desde sus propios servidores. Si usáramos
+  // window.location.origin, en localhost quedaría como
+  // http://localhost:3000/logo.png y PDFMonkey no podría verla,
+  // así que el logo saldría roto en el PDF.
+  const logo = (process.env.REACT_APP_URL_SITIO || window.location.origin) + '/logo.png';
 
   // Aquí juntamos toda la información que va a salir en el PDF.
   // Los nombres (folio, nombre, telefono...) tienen que ser
@@ -190,9 +194,10 @@ export async function generarPdf(datos) {
   // PASO 1: le pedimos a PDFMonkey que apunte el documento.
   // Esto contesta rapidísimo porque todavía no lo construye.
   //
-  // Nota: antes usábamos "/documents/sync", que espera hasta que
-  // el PDF esté listo, pero Netlify corta las funciones a los
-  // 10 segundos y se perdía la respuesta. Por eso son dos pasos.
+  // Nota: no usamos "/documents/sync", que espera hasta que el PDF
+  // esté listo, porque los servidores cortan las peticiones que
+  // tardan mucho y se perdía la respuesta. Por eso son dos pasos:
+  // primero lo pedimos y después preguntamos si ya quedó.
   const respuesta = await fetch(URL_API + '/documents', {
 
     // method dice qué tipo de petición es.

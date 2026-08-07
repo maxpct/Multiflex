@@ -24,6 +24,7 @@ import { enviarCorreo } from '../../../services/correo';
 
 function Formulario({ guardarPdf, guardarSolicitud, cambiarPagina }) {
 
+  alert("ESTE ES EL FORMULARIO NUEVO");
   // Esta variable nos dice si el formulario ya fue enviado.
   // Empieza en false porque todavía no se ha enviado.
   const [enviado, setEnviado] = useState(false);
@@ -69,7 +70,9 @@ function Formulario({ guardarPdf, guardarSolicitud, cambiarPagina }) {
 
     // ===== PDFMONKEY: pedimos el PDF con los datos del formulario. =====
     try {
+      console.log('ENTRANDO A PDFMONKEY');
       const pdf = await generarPdf(datos);
+      console.log(pdf);
 
       // Guardamos el PDF para que la sección Documento lo pueda mostrar.
       guardarPdf(pdf);

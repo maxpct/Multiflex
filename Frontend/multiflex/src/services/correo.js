@@ -7,14 +7,13 @@
 //
 // Igual que con PDFMonkey, no le hablamos directo a la API
 // porque el navegador lo bloquea (CORS) y porque la llave es
-// secreta. Le hablamos a "/api/correo" y del otro lado hay
-// un intermediario que sí puede llamarla:
-//   - En la computadora:  src/setupProxy.js
-//   - Ya publicado:       netlify/functions/correo.js
+// secreta. Le hablamos a NUESTRO backend, que sí tiene la llave.
 // =====================================================================
 
-// Dirección de nuestro intermediario (no la de Resend).
-const URL_API = '/api/correo';
+// Dirección de nuestro backend (no la de Resend).
+// Si la variable no estuviera puesta, usamos la de Render
+// para que el sitio no se caiga.
+const URL_API = (process.env.REACT_APP_API_URL || 'https://multiflex-tak3.onrender.com/api') + '/correo';
 
 // El correo al que le van a llegar las solicitudes.
 // El valor sale del archivo .env
