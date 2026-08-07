@@ -191,6 +191,21 @@ export async function generarPdf(datos) {
     estado: estado,
   };
 
+  console.log('URL:', URL_API + '/documents');
+
+  console.log('Body enviado:');
+
+  console.log({
+    document: {
+      document_template_id: PLANTILLA,
+      status: 'pending',
+      payload: contenido,
+      meta: {
+        _filename: 'Solicitud-' + folio + '.pdf'
+      }
+    }
+  });
+
   // PASO 1: le pedimos a PDFMonkey que apunte el documento.
   // Esto contesta rapidísimo porque todavía no lo construye.
   //
@@ -199,6 +214,7 @@ export async function generarPdf(datos) {
   // tardan mucho y se perdía la respuesta. Por eso son dos pasos:
   // primero lo pedimos y después preguntamos si ya quedó.
   const respuesta = await fetch(URL_API + '/documents', {
+  
 
     // method dice qué tipo de petición es.
     // POST se usa cuando le mandamos información al servidor.
@@ -219,6 +235,11 @@ export async function generarPdf(datos) {
     }),
   });
 
+  console.log('Status:', respuesta.status);
+
+  const texto = await respuesta.text();
+  console.log('Respuesta:', texto);
+
   // Si PDFMonkey nos contestó con un error, avisamos qué pasó.
   if (!respuesta.ok) {
 
@@ -236,12 +257,9 @@ export async function generarPdf(datos) {
     throw new Error('No pudimos generar el comprobante (error ' + respuesta.status + ').');
   }
 
-  // Convertimos la respuesta para poder usarla.
-  const info = await respuesta.json();
+  const info = texto ? JSON.parse(texto) : {};
 
-  // PDFMonkey nos regresa el documento adentro de "document".
   const doc = info.document || info;
-
   // Necesitamos el id para poder preguntar después si ya quedó.
   if (!doc || !doc.id) {
     throw new Error('PDFMonkey no devolvió el documento. Intenta de nuevo.');
