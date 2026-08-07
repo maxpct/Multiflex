@@ -39,7 +39,7 @@ function Documento({ pdf, cambiarPagina }) {
           </div>
 
           {/* El visor ocupa todo el ancho de la pantalla */}
-          <Visor enlace={pdf.verlo} />
+          <Visor enlace={pdf.incrustar} respaldo={pdf.verlo} />
         </div>
       )}
 

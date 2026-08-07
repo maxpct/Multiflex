@@ -129,6 +129,7 @@ async function esperarPdf(id) {
 
         // Regresamos los dos enlaces: uno para verlo y otro para bajarlo.
         return {
+          id: id,
           verlo: doc.preview_url || doc.download_url,
           bajarlo: doc.download_url || doc.preview_url,
         };
@@ -191,21 +192,6 @@ export async function generarPdf(datos) {
     estado: estado,
   };
 
-  console.log('URL:', URL_API + '/documents');
-
-  console.log('Body enviado:');
-
-  console.log({
-    document: {
-      document_template_id: PLANTILLA,
-      status: 'pending',
-      payload: contenido,
-      meta: {
-        _filename: 'Solicitud-' + folio + '.pdf'
-      }
-    }
-  });
-
   // PASO 1: le pedimos a PDFMonkey que apunte el documento.
   // Esto contesta rapidísimo porque todavía no lo construye.
   //
@@ -235,10 +221,7 @@ export async function generarPdf(datos) {
     }),
   });
 
-  console.log('Status:', respuesta.status);
-
   const texto = await respuesta.text();
-  console.log('Respuesta:', texto);
 
   // Si PDFMonkey nos contestó con un error, avisamos qué pasó.
   if (!respuesta.ok) {
@@ -267,6 +250,7 @@ export async function generarPdf(datos) {
 
   // Guardamos los enlaces por si de casualidad ya vinieron listos.
   let enlaces = {
+    id: doc.id,
     verlo: doc.preview_url || doc.download_url,
     bajarlo: doc.download_url || doc.preview_url,
   };
@@ -278,12 +262,20 @@ export async function generarPdf(datos) {
 
   // Regresamos toda la información que necesita la sección Comprobante
   // para mostrar el folio, la fecha, el estado y el PDF.
+  // Este es el enlace que usa el visor de la pagina.
+  // Apunta a NUESTRO backend, no a PDFMonkey, porque el enlace
+  // de PDFMonkey no se puede meter en un iframe (lo bloquea).
+  const incrustar = URL_API + '/ver/' + enlaces.id;
+
+  // Regresamos toda la informacion que necesita la seccion Comprobante
+  // para mostrar el folio, la fecha, el estado y el PDF.
   return {
     folio: folio,
     fecha: fecha,
     estado: estado,
     nombre: datos.nombre,
     servicio: datos.servicio,
+    incrustar: incrustar,
     verlo: enlaces.verlo,
     bajarlo: enlaces.bajarlo,
   };
