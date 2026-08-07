@@ -1,0 +1,14 @@
+/* Título de la sección de estadísticas */
+.estadisticas-titulo {
+  font-family: "Segoe UI";
+  font-size: 17px;
+  font-weight: 700;
+  color: #1A1D20;
+  margin-bottom: 3px;
+}
+
+/* Texto de abajo del título */
+.estadisticas-texto {
+  font-size: 13px;
+  color: #6C757D;
+}

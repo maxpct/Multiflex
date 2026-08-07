@@ -112,3 +112,73 @@ export const getRequests = async () => {
 
     return await response.json();
 };
+
+// ===================================================================
+// OPERACIONES DEL PANEL (CRUD)
+// ===================================================================
+
+// ACTUALIZAR (UPDATE): cambia el estado de una solicitud.
+// Recibe el id de la solicitud y el id del estado nuevo.
+export const updateRequestStatus = async (id, estado) => {
+
+    const response = await fetch(`${API_URL}/requests/${id}`, {
+
+        // PUT se usa cuando queremos modificar algo que ya existe.
+        method: "PUT",
+
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({ estado })
+    });
+
+    if (!response.ok) {
+        throw new Error("No se pudo cambiar el estado");
+    }
+
+    return await response.json();
+};
+
+
+// ELIMINAR (DELETE): borra una solicitud de la base de datos.
+export const deleteRequest = async (id) => {
+
+    const response = await fetch(`${API_URL}/requests/${id}`, {
+
+        // DELETE se usa cuando queremos borrar algo.
+        method: "DELETE"
+    });
+
+    if (!response.ok) {
+        throw new Error("No se pudo eliminar la solicitud");
+    }
+
+    return await response.json();
+};
+
+
+// SUBQUERY: trae los servicios cuyo precio esta por encima del promedio.
+// La consulta con subconsulta esta en el modelo del backend.
+export const getPremiumServices = async () => {
+
+    const response = await fetch(`${API_URL}/requests/premium`);
+
+    if (!response.ok) {
+        throw new Error("No se pudieron cargar los servicios destacados");
+    }
+
+    return await response.json();
+};
+
+
+// GROUP BY: trae cuantas solicitudes tiene cada servicio.
+// La consulta con GROUP BY y HAVING esta en el modelo del backend.
+export const getServiceStatistics = async () => {
+
+    const response = await fetch(`${API_URL}/requests/statistics`);
+
+    if (!response.ok) {
+        throw new Error("No se pudieron cargar las estadisticas");
+    }
+
+    return await response.json();
+};

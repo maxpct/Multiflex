@@ -1,0 +1,88 @@
+/* El formulario para registrar una solicitud */
+.nueva-formulario {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #E9ECEF;
+  /* Aparece bajando suavemente */
+  animation: abrir-formulario 0.35s ease;
+}
+
+/* Animación: el formulario aparece */
+@keyframes abrir-formulario {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Los campos van en fila */
+.nueva-fila {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* Cada campo con su etiqueta arriba */
+.nueva-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.nueva-campo label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1D20;
+  margin-bottom: 5px;
+}
+
+.nueva-campo input,
+.nueva-campo select,
+.nueva-campo textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #E4E7EB;
+  border-radius: 8px;
+  font-family: "Segoe UI";
+  font-size: 14px;
+  color: #1A1D20;
+  /* El borde se pinta de azul al escribir */
+  transition: border-color 0.3s ease;
+}
+
+.nueva-campo input:focus,
+.nueva-campo select:focus,
+.nueva-campo textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+/* Botón que guarda la solicitud */
+.nueva-guardar {
+  background-color: #28A745;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 22px;
+  cursor: pointer;
+  /* Se oscurece al pasar el mouse */
+  transition: background-color 0.3s ease;
+}
+
+.nueva-guardar:hover {
+  background-color: #1E7E34;
+}
+
+.nueva-guardar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* En celular los campos se acomodan uno debajo del otro */
+@media (max-width: 800px) {
+  .nueva-fila {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

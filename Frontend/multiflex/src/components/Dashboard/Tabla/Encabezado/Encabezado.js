@@ -11,6 +11,7 @@ function Encabezado() {
         <th>Servicio</th>
         <th>Fecha</th>
         <th>Estado</th>
+        <th>Acciones</th>
       </tr>
     </thead>
   );

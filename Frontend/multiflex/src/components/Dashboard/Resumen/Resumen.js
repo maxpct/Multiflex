@@ -14,7 +14,7 @@ function Resumen({ solicitudes }) {
   const total = solicitudes.length;
   const pendientes = contarPorEstado(solicitudes, 'Pendiente');
   const proceso = contarPorEstado(solicitudes, 'En proceso');
-  const terminadas = contarPorEstado(solicitudes, 'Terminada');
+  const terminadas = contarPorEstado(solicitudes, 'Finalizada');
 
   return (
     <div className="resumen">

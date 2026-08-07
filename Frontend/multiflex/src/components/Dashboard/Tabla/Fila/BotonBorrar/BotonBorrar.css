@@ -1,0 +1,25 @@
+/* Botón rojo para eliminar una solicitud */
+.boton-borrar {
+  background-color: #FFFFFF;
+  color: #DC3545;
+  border: 1px solid #DC3545;
+  border-radius: 8px;
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  cursor: pointer;
+  /* Se pinta de rojo al pasar el mouse */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-borrar:hover {
+  background-color: #DC3545;
+  color: #FFFFFF;
+}
+
+/* Mientras se borra se ve apagado */
+.boton-borrar:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}

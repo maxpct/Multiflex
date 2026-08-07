@@ -4,8 +4,9 @@ import Fila from './Fila/Fila';
 import Vacia from './Vacia/Vacia';
 
 // Esta es la tabla con la lista de solicitudes.
-// Recibe las solicitudes que se deben mostrar (ya filtradas).
-function Tabla({ solicitudes }) {
+// Recibe las solicitudes que se deben mostrar (ya filtradas)
+// y la función "recargar" para volver a pedirlas cuando algo cambia.
+function Tabla({ solicitudes, recargar }) {
 
   // Si el filtro no encontró nada, mostramos un aviso.
   if (solicitudes.length === 0) {
@@ -20,9 +21,13 @@ function Tabla({ solicitudes }) {
   for (let i = 0; i < solicitudes.length; i++) {
 
     // El "key" es un dato que React pide para no confundir las filas.
-    // Usamos el folio porque nunca se repite.
+    // Usamos el id de la solicitud porque nunca se repite.
     filas[i] = (
-      <Fila key={solicitudes[i].folio} solicitud={solicitudes[i]} />
+      <Fila
+        key={solicitudes[i].id_solicitud}
+        solicitud={solicitudes[i]}
+        recargar={recargar}
+      />
     );
   }
 

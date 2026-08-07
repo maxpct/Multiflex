@@ -81,7 +81,7 @@ function App() {
 
       {/* Subpágina del dashboard, con las solicitudes */}
       {pagina === 'dashboard' && (
-        <Dashboard solicitudes={solicitudes} cambiarPagina={irAPagina} />
+        <Dashboard cambiarPagina={irAPagina} />
       )}
 
       {/* El pie también siempre se ve */}

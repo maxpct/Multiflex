@@ -1,0 +1,13 @@
+/* Caja de la sección de estadísticas */
+.estadisticas {
+  background-color: #FFFFFF;
+  border: 1px solid #E9ECEF;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* Las barras van una debajo de otra */
+.estadisticas-lista {
+  margin-top: 18px;
+}

@@ -1,14 +1,37 @@
-/* La etiqueta redonda del estado */
+/* La lista para cambiar el estado.
+   Se ve como la etiqueta de color que había antes. */
 .estado {
-  display: inline-block;
+  font-family: "Segoe UI";
   font-size: 12px;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 5px 12px;
+  border: none;
   border-radius: 20px;
   color: #FFFFFF;
+  cursor: pointer;
+  /* Cambia de color suavemente al escoger otro estado */
+  transition: opacity 0.3s ease;
+}
+
+.estado:hover {
+  opacity: 0.85;
+}
+
+/* Mientras se guarda el cambio se ve apagada */
+.estado:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* Las opciones de la lista van en blanco para que se lean */
+.estado option {
+  background-color: #FFFFFF;
+  color: #1A1D20;
 }
 
 /* Cada estado con su color */
-.estado-pendiente { background-color: #E0A800; }
-.estado-proceso   { background-color: #6C5CE7; }
-.estado-terminada { background-color: #28A745; }
+.estado-pendiente  { background-color: #E0A800; }
+.estado-aceptada   { background-color: #17A2B8; }
+.estado-en-proceso { background-color: #6C5CE7; }
+.estado-finalizada { background-color: #28A745; }
+.estado-cancelada  { background-color: #DC3545; }
